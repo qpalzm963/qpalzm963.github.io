@@ -134,13 +134,19 @@
       }
       var card = el('article', { className: 'project fade-in' }, [
         el('div', { className: 'project-head' }, [
-          el('span', { className: 'app-icon', 'aria-hidden': 'true', style: 'background:' + p.color, text: p.initials }),
+          p.icon
+            ? el('img', { className: 'app-icon app-icon-img', src: p.icon, alt: '', width: '44', height: '44', loading: 'lazy' })
+            : el('span', { className: 'app-icon', 'aria-hidden': 'true', style: 'background:' + p.color, text: p.initials }),
           el('div', { className: 'project-title' }, [
             title,
             el('span', { text: p.platform + ' · ' + p.kind })
           ])
         ]),
         el('p', { text: p.desc }),
+        p.stores ? el('div', { className: 'stores' }, [
+          p.stores.ios && el('a', { className: 'store', href: p.stores.ios, target: '_blank', rel: 'noopener', text: 'App Store ↗' }),
+          p.stores.android && el('a', { className: 'store', href: p.stores.android, target: '_blank', rel: 'noopener', text: 'Google Play ↗' })
+        ]) : null,
         el('div', { className: 'project-foot' }, [
           el('span', { className: 'metric', text: p.metric }),
           el('span', { className: 'tagline', text: p.tags.join(' · ') })
@@ -165,6 +171,13 @@
     } else {
       window.location.href = 'mailto:' + email;
     }
+  });
+
+  document.getElementById('theme-toggle').addEventListener('click', function () {
+    var root = document.documentElement;
+    var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
   });
 
   document.getElementById('year').textContent = String(new Date().getFullYear());

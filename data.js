@@ -71,7 +71,9 @@ window.SITE_DATA = {
     {
       name: 'YouBike 2.0 官方 App', platform: '工作專案', kind: 'Flutter · iOS / Android', initials: 'Y', color: '#B45309',
       desc: '全國性公共單車服務 App，Google Play 下載 100 萬次以上。負責功能開發與線上缺陷修復，建置 CI/CD 自動上架並導入 Maestro E2E 測試。',
-      metric: '正式上線中', tags: ['Flutter', 'fastlane', 'GitLab CI', 'Maestro'], link: ''
+      metric: '正式上線中', tags: ['Flutter', 'fastlane', 'GitLab CI', 'Maestro'], link: '',
+      icon: 'img/youbike.jpg',
+      stores: { ios: 'https://apps.apple.com/tw/app/id1483423095', android: 'https://play.google.com/store/apps/details?id=tw.com.youbike.plus' }
     },
     {
       name: 'MP TimePal 員工打卡', platform: '工作專案', kind: 'Flutter · iOS / Android', initials: '打', color: '#1F6F8B',
@@ -81,7 +83,9 @@ window.SITE_DATA = {
     {
       name: 'Memo 社交 App', platform: '個人作品', kind: 'Flutter + React', initials: 'M', color: '#9F1239',
       desc: '與友人合作，已上架 iOS / Android。負責 Flutter 前端；並以 AI 輔助（Claude Code）在既有 Go 後端上開發 React 後台管理系統（用戶管理、內容審核），由我負責需求拆解、審查與部署驗證。',
-      metric: '已上架 iOS / Android', tags: ['Flutter', 'React', 'Go', 'Claude Code'], link: 'https://memosocial.app/zh-TW'
+      metric: '已上架 iOS / Android', tags: ['Flutter', 'React', 'Go', 'Claude Code'], link: 'https://memosocial.app/zh-TW',
+      icon: 'img/memo.jpg',
+      stores: { ios: 'https://apps.apple.com/tw/app/id6771999111', android: 'https://play.google.com/store/apps/details?id=net.atleaststill.memo' }
     },
     {
       name: 'Echo — 安全回聲', platform: '個人作品', kind: 'Flutter · iOS / Android', initials: 'E', color: '#1E6B42',
